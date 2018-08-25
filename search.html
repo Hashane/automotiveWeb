@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Car Exporter</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">	
+	<link rel="stylesheet" href="assests/style.css"/>
+    <!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script language="JavaScript" type="text/javascript">
+  $(document).ready(function(){
+
+  		$('#searchMaker1').hide();
+        $('#searchMaker1btn').on('click', function(event) { 
+        	var link = $(this);       
+            $('#searchMaker1').fadeToggle(700,function(){
+             	if ($(this).is(':visible')) {
+		             link.text('View Less');                
+		        } else {
+		             link.text('View All');                
+		        }      
+            });
+        });
+
+        $('#searchMaker2').hide();
+        $('#searchMaker2btn').on('click', function(event) { 
+        	var link = $(this);       
+            $('#searchMaker2').fadeToggle(700,function(){
+             	if ($(this).is(':visible')) {
+		             link.text('View Less');                
+		        } else {
+		             link.text('View All');                
+		        }      
+            });
+        });
+
+        $('#searchMaker3').hide();
+        $('#searchMaker3btn').on('click', function(event) {
+        	var link = $(this);        
+            $('#searchMaker3').fadeToggle(700,function(){
+             	if ($(this).is(':visible')) {
+		             link.text('View Less');                
+		        } else {
+		             link.text('View All');                
+		        }      
+            });
+        });
+
+
+    });
+  
+</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav-custom-style" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarCollapse">
+					<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#home"><img src="img/logo1.png" alt=""></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="NavbarCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#">Stock</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href=""><i class="fa fa-search"></i> Search</a></li>					
+				</ul>			
+			</div>
+
+		</div>
+	</nav>
+	
+	<div id="searchAdvanced" class="container-fluid spacer mtop">
+	<h3 class="text-center">Search</h3>  
+	<div class="row sDiv">
+		<form >
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="maker">Maker</label>
+			<select class="form-control" id="maker">
+				<option>Maker</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="model">Model</label>
+			<select class="form-control" id="model">
+				<option>Model</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="row">
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="yearfrom">Year From</label>
+				<select class="form-control" id="yearfrom">
+					<option>Year From</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="yearto">Year To</label>
+				<select class="form-control" id="yearto">
+				    <option>Year To</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="row">
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="pricefrom">Price From</label>
+				<select class="form-control" id="pricefrom">
+					<option>Price From</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="priceto">Price To</label>
+				<select class="form-control" id="priceto">
+				    <option>Price To</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="steering">Steering</label>
+			<select class="form-control" id="steering">
+				<option>Steering</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="engine">Engine</label>
+			<select class="form-control" id="engine">
+				<option>Engine</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="type">Type</label>
+			<select class="form-control" id="type">
+				<option>Type</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="bodytype">Body Type</label>
+			<select class="form-control" id="bodytype">
+				<option>Body Type</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="fuel">Fuel</label>
+			<select class="form-control" id="fuel">
+				<option>Fuel</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="transmission">Transmission</label>
+			<select class="form-control" id="transmission">
+				<option>Transmission</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="row">
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="mileagefrom">Mileage From</label>
+				<select class="form-control" id="mileagefrom">
+					<option>Mileage From</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="mileageto">Mileage To</label>
+				<select class="form-control" id="mileageto">
+				    <option>Mileage To</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="2wd4wd">2WD/4WD</label>
+			<select class="form-control" id="2wd4wd">
+				<option>2WD/4WD</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="country">Country</label>
+			<select class="form-control" id="country">
+				<option>Country</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-9 col-sm-8 col-xs-6">
+		  <div class="form-group">
+		    <input class="form-control" type="text" name="search" placeholder=" Search for Make, Model, Chassis, Stock Number etc.">
+		  </div>
+		</div>
+		<div class="col-md-12 col-xs-12">
+			<label class="checkbox-inline"><input type="checkbox" value="">Used</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Brand New</label>
+		</div>
+		<div class="col-md-12 col-xs-12 text-center">
+			<button type="submit" class="btn btn-default mcustom">Search</button>
+			<button type="button" class="btn btn-default mcustom">Reset</button>
+		</div>
+
+		</div>		  
+		</form>
+	</div>
+	</div>
+
+	<div id="searchCountry" class="container-fluid spacer">
+	<h3 class="text-center">Stock</h3>  
+	<ul class="text-center">
+		<li class="sBox">
+			<a href=""><img class="img-thumbnail" src="img/japan.png" alt=""></a>
+			<span><h4>Japan Stock</h4></span>
+		</li>
+		<li class="sBox">
+			<a href=""><img class="img-thumbnail" src="img/uk.jpg" alt=""></a>
+			<span><h4>UK Stock</h4></span>
+		</li>
+		<li class="sBox">
+			<a href=""><img class="img-thumbnail" src="img/thai.png" alt=""></a>
+			<span><h4>Thai Stock</h4></span>
+		</li>
+		<li class="sBox">
+			<a href=""><img class="img-thumbnail" src="img/Korea.png" alt=""></a>
+			<span><h4>Korea Stock</h4></span>
+		</li>
+	</ul>		
+	</div>
+
+	<div id="searchMaker" class="container-fluid spacer text-center">
+		<div class="row">
+			<div class="col-md-4 col-xs-12 ">
+				<div class="searchMakerBox sBox3">
+				<div class="topbar"></div>
+				<h3 class="text-center">Imported Makers</h3>
+				
+					<ul class="text-center">
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<div id="searchMaker1">
+							<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+						</div>
+					</ul>
+					<button id="searchMaker1btn" type="button" class="btn btn-default">View All</button>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-xs-12 ">
+				<div class="searchMakerBox sBox3">
+				<div class="topbar"></div>
+				<h3 class="text-center">Imported Makers</h3>
+				
+					<ul class="text-center">
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<div id="searchMaker2">
+							<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+						</div>
+					</ul>
+					<button id="searchMaker2btn" type="button" class="btn btn-default">View All</button>
+				</div>	
+			</div>
+
+			<div class="col-md-4 col-xs-12 ">
+				<div class="searchMakerBox sBox3">
+				<div class="topbar"></div>
+				<h3 class="text-center">Imported Makers</h3>
+				
+					<ul class="text-center">
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+						</li>
+						<div id="searchMaker3">
+							<li>
+							<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+							<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+							<li>
+								<a href=""><img class="img-thumbnail" src="img/toyota.png" alt=""></a>
+								<span><h4>Toyota</h4></span>
+							</li>
+						</div>
+					</ul>
+					<button id="searchMaker3btn" type="button" class="btn btn-default">View All</button>
+				</div>	
+			</div>
+
+		</div>
+	</div>
+
+	<div id="searchQuickLinks" class="container-fluid spacer">
+	<h3 class="text-center">Quick Search</h3>
+		<div class="row text-center sDiv">
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<h4>Quick Search Links</h4>
+				<ul>
+					<li><a href="">Manual Transmission Cars</a></li>
+					<li><a href="">Left Hand Drive</a></li>
+					<li><a href="">Brand New Cars 2016</a></li>
+					<li><a href="">Bargain Sale</a></li>
+					<li><a href="">Accidental Cars</a></li>
+					<li><a href="">Sold Out Vehicles</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<h4>Search by Price</h4>
+				<ul >
+					<li><a href="">Under US$1,000</a></li>
+					<li><a href="">Under US$1,500</a></li>
+					<li><a href="">Under US$2,000</a></li>
+					<li><a href="">Under US$3,000</a></li>
+					<li><a href="">Under US$5,000</a></li>
+					<li><a href="">Above US$5,000</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<h4>Quick Search Links</h4>
+				<ul >
+					<li><a href="">Manual Transmission Cars</a></li>
+					<li><a href="">Left Hand Drive</a></li>
+					<li><a href="">Brand New Cars 2016</a></li>
+					<li><a href="">Bargain Sale</a></li>
+					<li><a href="">Accidental Cars</a></li>
+					<li><a href="">Sold Out Vehicles</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<h4>Quick Search Links</h4>
+				<ul >
+					<li><a href="">Sold Out Vehicles</a></li>
+					<li><a href="">Sold Out Vehicles</a></li>
+					<li><a href="">Sold Out Vehicles</a></li>
+					<li><a href="">Sold Out Vehicles</a></li>
+					<li><a href="">Sold Out Vehicles</a></li>
+					<li><a href="">Sold Out Vehicles</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="topbar"></div>
+    <div id="contact" class="container-fluid spacer">
+    <h2 class="text-center  ">Contact Us</h2>
+		<div class="row contact">
+			  <div class="col-sm-6 ">			    
+			    <p>[recipient]<br>[street address]<br>[postal code + city/town/locality]<br>[country name]<br></p>
+			    <p>Tel : +xx-xx-xxx-xxxx<br>Fax : xx-xx-xxx-xxxx<br>Email : sales@xxxxxx.com<br> Web : www.cxxx.com<br>
+				Sales Hotline : xx-xx-xxxx-xxxx</p>
+				<div class="socialmedia">
+					<p ><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> </p>
+				</div>    
+			  </div>
+			  
+				<div class="col-sm-6 contactform center">
+					<div class="row ">           
+					        <input class="form-control" type="text" placeholder="Name" >
+					        <input class="form-control" type="text" placeholder="Company">
+					        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+					        <button class="btn btn-default" style="float:right;">Send</button>
+					</div>
+				</div>			  
+		  </div>
+	</div>
+
+	<div class="footer container-fluid text-center spacer">		
+		<p>Copyright @ 2016 HyperX. All rights reserved.</p>
+	</div>
+
+	<a href="#searchAdvanced" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
+
+
+<script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<script src="assests/customScroll.js"></script>
+
+</body>
+
+</html>

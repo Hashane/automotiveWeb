@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Car Exporter</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">	
+	<link rel="stylesheet" href="assests/style.css"/>
+    <!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+	    $('#thumbnailCarousel').carousel({
+	      interval: 2600
+	    });
+	    
+  	});
+
+  	$(document).ready(function(){
+        $('#infoH1').on('click', function(event) {       
+            $('#infoSec1').fadeToggle(500);
+        });
+
+        $('#infoSec2').hide();
+        $('#infoH2').on('click', function(event) {       
+            $('#infoSec2').fadeToggle(500);
+        });
+
+        $('#infoSec3').hide();
+        $('#infoH3').on('click', function(event) {       
+            $('#infoSec3').fadeToggle(500);
+        });
+
+        $('#infoSec4').hide();
+        $('#infoH4').on('click', function(event) {       
+            $('#infoSec4').fadeToggle(500);
+        });
+
+        $('#infoSec5').hide();
+        $('#infoH5').on('click', function(event) {       
+            $('#infoSec5').fadeToggle(500);
+        });
+    });
+
+  	$(document).ready(function() {
+    	$(".customThumbnailBar").customThumbnailBar({axis:"x"});
+	});
+
+</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav-custom-style" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarCollapse">
+					<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#home"><img src="img/logo.png" alt=""></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="NavbarCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#">Stock</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a id="searchbtn" href="#"><i class="fa fa-search"></i> Search</a></li>			
+				</ul>			
+			</div>
+
+		</div>
+	</nav>
+
+	<div id="itemView" class="container-fluid spacer mtop sDiv">
+	<div class="row">
+		<div class="col-md-6 col-xs-12">
+		<div class="row">
+
+			<div class="col-xs-12 itemViewName">
+				<div class="topbar"></div>
+				<div class="itemViewNameH">
+					<h3 class="text-center">Land Rover Defender</h3>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-12 itemViewInfo sBox2">
+			<div id ="infoH1" class="itemViewInfoH">
+				<span><h4>Details</h4></span>
+			</div>
+
+			<div id="infoSec1" class="row itemViewInfoSec">
+
+					<div class="col-sm-6 col-xs-12">
+					<div class="row ">
+						<div class="col-xs-5">
+						<ul>
+							<li><span>Stock No.</span></li>
+							<li><span>Model</span></li>
+							<li><span>Grade</span></li>
+							<li><span>Mileage</span></li>
+							<li><span>Transmission</span></li>
+							<li><span>Steering</span></li>
+							<li><span>Seats</span></li>
+							<li><span>Color</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>xxx119</li>
+							<li>Defender</li>
+							<li>110</li>
+							<li>xxxxx</li>
+							<li>Manual</li>
+							<li>Right Hand</li>
+							<li>2</li>
+							<li>Green</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+					<div class="row">
+						<div class="col-xs-5 ">
+						<ul>
+							<li><span>Make</span></li>
+							<li><span>Reg.Year</span></li>
+							<li><span>Chassis</span></li>
+							<li><span>Engine</span></li>
+							<li><span>Fuel</span></li>
+							<li><span>Drive</span></li>
+							<li><span>Doors</span></li>
+							<li><span>Location</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>Land Rover</li>
+							<li>2013</li>
+							<li>HCPUTD</li>
+							<li>2,200 cc</li>
+							<li>Diesel</li>
+							<li>4WD</li>
+							<li>2</li>
+							<li>United Kingdom</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+			</div>				
+			</div>
+
+			<div class="col-xs-12 itemViewInfo sBox2">
+			<div id ="infoH2" class="itemViewInfoH"><h4>Interior</h4></div>
+
+			<div id="infoSec2" class="row itemViewInfoSec">
+
+					<div class="col-sm-6 col-xs-12">
+					<div class="row ">
+						<div class="col-xs-5">
+						<ul>
+							<li><span>Stock No.</span></li>
+							<li><span>Model</span></li>
+							<li><span>Grade</span></li>
+							<li><span>Mileage</span></li>
+							<li><span>Transmission</span></li>
+							<li><span>Steering</span></li>
+							<li><span>Seats</span></li>
+							<li><span>Color</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>xxx119</li>
+							<li>Defender</li>
+							<li>110</li>
+							<li>xxxxx</li>
+							<li>Manual</li>
+							<li>Right Hand</li>
+							<li>2</li>
+							<li>Green</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+					<div class="row">
+						<div class="col-xs-5 ">
+						<ul>
+							<li><span>Make</span></li>
+							<li><span>Reg.Year</span></li>
+							<li><span>Chassis</span></li>
+							<li><span>Engine</span></li>
+							<li><span>Fuel</span></li>
+							<li><span>Drive</span></li>
+							<li><span>Doors</span></li>
+							<li><span>Location</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>Land Rover</li>
+							<li>2013</li>
+							<li>HCPUTD</li>
+							<li>2,200 cc</li>
+							<li>Diesel</li>
+							<li>4WD</li>
+							<li>2</li>
+							<li>United Kingdom</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+			</div>				
+			</div>
+
+			<div class="col-xs-12 itemViewInfo sBox2">
+			<div id ="infoH3" class="itemViewInfoH"><h4>Exterior</h4></div>
+			<div id="infoSec3" class="row itemViewInfoSec">
+
+					<div class="col-sm-6 col-xs-12">
+					<div class="row ">
+						<div class="col-xs-5">
+						<ul>
+							<li><span>Stock No.</span></li>
+							<li><span>Model</span></li>
+							<li><span>Grade</span></li>
+							<li><span>Mileage</span></li>
+							<li><span>Transmission</span></li>
+							<li><span>Steering</span></li>
+							<li><span>Seats</span></li>
+							<li><span>Color</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>xxx119</li>
+							<li>Defender</li>
+							<li>110</li>
+							<li>xxxxx</li>
+							<li>Manual</li>
+							<li>Right Hand</li>
+							<li>2</li>
+							<li>Green</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+					<div class="row">
+						<div class="col-xs-5 ">
+						<ul>
+							<li><span>Make</span></li>
+							<li><span>Reg.Year</span></li>
+							<li><span>Chassis</span></li>
+							<li><span>Engine</span></li>
+							<li><span>Fuel</span></li>
+							<li><span>Drive</span></li>
+							<li><span>Doors</span></li>
+							<li><span>Location</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>Land Rover</li>
+							<li>2013</li>
+							<li>HCPUTD</li>
+							<li>2,200 cc</li>
+							<li>Diesel</li>
+							<li>4WD</li>
+							<li>2</li>
+							<li>United Kingdom</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+			</div>				
+			</div>
+
+			<div class="col-xs-12 itemViewInfo sBox2">
+			<div id ="infoH4" class="itemViewInfoH"><h4>Equipment</h4></div>
+
+			<div id="infoSec4" class="row itemViewInfoSec">
+
+					<div class="col-sm-6 col-xs-12">
+					<div class="row ">
+						<div class="col-xs-5">
+						<ul>
+							<li><span>Stock No.</span></li>
+							<li><span>Model</span></li>
+							<li><span>Grade</span></li>
+							<li><span>Mileage</span></li>
+							<li><span>Transmission</span></li>
+							<li><span>Steering</span></li>
+							<li><span>Seats</span></li>
+							<li><span>Color</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>xxx119</li>
+							<li>Defender</li>
+							<li>110</li>
+							<li>xxxxx</li>
+							<li>Manual</li>
+							<li>Right Hand</li>
+							<li>2</li>
+							<li>Green</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+					<div class="row">
+						<div class="col-xs-5 ">
+						<ul>
+							<li><span>Make</span></li>
+							<li><span>Reg.Year</span></li>
+							<li><span>Chassis</span></li>
+							<li><span>Engine</span></li>
+							<li><span>Fuel</span></li>
+							<li><span>Drive</span></li>
+							<li><span>Doors</span></li>
+							<li><span>Location</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>Land Rover</li>
+							<li>2013</li>
+							<li>HCPUTD</li>
+							<li>2,200 cc</li>
+							<li>Diesel</li>
+							<li>4WD</li>
+							<li>2</li>
+							<li>United Kingdom</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+			</div>				
+			</div>
+
+			<div class="col-xs-12 itemViewInfo sBox2">
+			<div id ="infoH5" class="itemViewInfoH"><h4>Other</h4></div>
+
+			<div id="infoSec5" class="row itemViewInfoSec">
+
+					<div class="col-sm-6 col-xs-12">
+					<div class="row ">
+						<div class="col-xs-5">
+						<ul>
+							<li><span>Stock No.</span></li>
+							<li><span>Model</span></li>
+							<li><span>Grade</span></li>
+							<li><span>Mileage</span></li>
+							<li><span>Transmission</span></li>
+							<li><span>Steering</span></li>
+							<li><span>Seats</span></li>
+							<li><span>Color</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>xxx119</li>
+							<li>Defender</li>
+							<li>110</li>
+							<li>xxxxx</li>
+							<li>Manual</li>
+							<li>Right Hand</li>
+							<li>2</li>
+							<li>Green</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+					<div class="row">
+						<div class="col-xs-5 ">
+						<ul>
+							<li><span>Make</span></li>
+							<li><span>Reg.Year</span></li>
+							<li><span>Chassis</span></li>
+							<li><span>Engine</span></li>
+							<li><span>Fuel</span></li>
+							<li><span>Drive</span></li>
+							<li><span>Doors</span></li>
+							<li><span>Location</span></li>
+						</ul>
+						</div>
+						<div class="col-xs-7 ">
+						<ul>
+							<li>Land Rover</li>
+							<li>2013</li>
+							<li>HCPUTD</li>
+							<li>2,200 cc</li>
+							<li>Diesel</li>
+							<li>4WD</li>
+							<li>2</li>
+							<li>United Kingdom</li>
+						</ul>
+						</div>
+					</div>
+					</div>
+			</div>				
+			</div>
+
+		</div>
+		</div>
+
+		<div class="col-md-6 col-xs-12 text-center ">
+			<div id="thumbnailCarousel" class="carousel slide" data-ride="carousel">
+		    <div class='carousel-outer'>
+
+		        <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <img class="img-responsive" src="img/1.jpeg" alt="">
+				    </div>
+
+				    <div class="item">
+				      <img class="img-responsive" src="img/2.jpeg" alt="">
+				    </div>
+
+				    <div class="item">
+				      <img class="img-responsive" src="img/3.jpeg" alt="">
+				    </div>
+
+				    <div class="item">
+				      <img class="img-responsive" src="img/4.jpeg" alt="">
+				    </div>
+				</div>
+		            
+		        <a class="left carousel-control" href="#thumbnailCarousel" data-slide="prev"><span class='glyphicon glyphicon-chevron-left'></span></a>
+			    <a class="right carousel-control" href="#thumbnailCarousel" data-slide="next"><span class='glyphicon glyphicon-chevron-right'></span></a>
+		    </div>
+
+			    <ol class='carousel-indicators customThumbnailBar'>
+			        <li data-target="#thumbnailCarousel" data-slide-to="0" class="active"><img class="img-responsive" src="img/1thumb.jpeg" alt='' /></li>
+			        <li data-target="#thumbnailCarousel" data-slide-to="1"><img class="img-responsive" src="img/2thumb.jpeg" alt="" /></li>
+			        <li data-target="#thumbnailCarousel" data-slide-to="2"><img class="img-responsive" src="img/3thumb.jpeg" alt="" /></li>
+			        <li data-target="#thumbnailCarousel" data-slide-to="3"><img class="img-responsive" src="img/4thumb.jpeg" alt="" /></li>
+			   
+			    </ol>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+	<div class="topbar"></div>
+    <div id="contact" class="container-fluid spacer">
+    <h2 class="text-center ">Contact Us</h2>
+		<div class="row contact">
+			  <div class="col-sm-6 ">			    
+			    <p>[recipient]<br>[street address]<br>[postal code + city/town/locality]<br>[country name]<br></p>
+			    <p>Tel : +xx-xx-xxx-xxxx<br>Fax : xx-xx-xxx-xxxx<br>Email : sales@xxxxxx.com<br> Web : www.cxxx.com<br>
+				Sales Hotline : xx-xx-xxxx-xxxx</p>
+				<div class="socialmedia">
+					<p ><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> </p>
+				</div>    
+			  </div>
+			  
+				<div class="col-sm-6 contactform center">
+					<div class="row ">           
+					        <input class="form-control" type="text" placeholder="Name" >
+					        <input class="form-control" type="text" placeholder="Company">
+					        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+					        <button class="btn btn-default" style="float:right;">Send</button>
+					</div>
+				</div>			  
+		  </div>
+	</div>
+
+	<div class="footer container-fluid text-center spacer">		
+		<p>Copyright @ 2016 HyperX. All rights reserved.</p>
+	</div>
+
+	<a href="#home" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
+
+
+<script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<script>
+	
+</script>
+<script src="assests/customScroll.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Hyper Personalized Experience" content="">
+    <meta name="HyperXWeb" content="">
+
+    <title>Car Exporter</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">	
+	<link rel="stylesheet" href="assests/style.css"/>
+    <!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+
+		$(document).ready(function(){
+			$.widget.bridge('uitooltip', $.ui.tooltip);
+			$.widget.bridge('uibutton', $.ui.button);
+		    $('[data-toggle="tooltip"]').tooltip(); 
+		});
+
+         $(function() {
+            $( "#slider-1" ).slider({
+               range:true,
+               min: 0,
+               max: 50000,
+               values: [ 10000, 25000 ],
+               slide: function( event, ui ) {
+                  $( "#priceslider" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+               }
+           });
+         $( "#priceslider" ).val( "$" + $( "#slider-1" ).slider( "values", 0 ) +
+            " - $" + $( "#slider-1" ).slider( "values", 1 ) );
+         });
+
+         $(function() {
+            $( "#slider-2" ).slider({
+               range:true,
+               min: 0,
+               max: 50000,
+               values: [ 10000, 25000 ],
+               slide: function( event, ui ) {
+                  $( "#yearslider" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+               }
+           });
+         $( "#yearslider" ).val( "$" + $( "#slider-2" ).slider( "values", 0 ) +
+            " - $" + $( "#slider-2" ).slider( "values", 1 ) );
+         });
+
+         $(function() {
+            $( "#slider-3" ).slider({
+               range:true,
+               min: 0,
+               max: 50000,
+               values: [ 10000, 25000 ],
+               slide: function( event, ui ) {
+                  $( "#engineslider" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+               }
+           });
+         $( "#engineslider" ).val( "$" + $( "#slider-3" ).slider( "values", 0 ) +
+            " - $" + $( "#slider-3" ).slider( "values", 1 ) );
+         });
+
+		
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav-custom-style" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavbarCollapse">
+					<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#home"><img src="img/logo.svg" alt=""></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="NavbarCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.html#home">Home</a></li>
+					<li><a href="index.html#about">About</a></li>
+					<li><a href="index.html#services">Services</a></li>
+					<li><a href="stock.html">Stock</a></li>
+					<li><a href="index.html#contact">Contact</a></li>
+					<li><a id="searchbtn" href="#"><i class="fa fa-search"></i> Search</a></li>			
+				</ul>			
+			</div>
+
+		</div>
+	</nav>
+
+	<div id="searchAdvanced" class="container-fluid spacer mtop">
+	<h3 class="text-center">Search</h3>  
+	<div class="row sDiv">
+		<form >
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="maker">Maker</label>
+			<select class="form-control" id="maker">
+				<option>Maker</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="model">Model</label>
+			<select class="form-control" id="model">
+				<option>Model</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="row">
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="yearfrom">Year From</label>
+				<select class="form-control" id="yearfrom">
+					<option>Year From</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="yearto">Year To</label>
+				<select class="form-control" id="yearto">
+				    <option>Year To</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="row">
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="pricefrom">Price From</label>
+				<select class="form-control" id="pricefrom">
+					<option>Price From</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="priceto">Price To</label>
+				<select class="form-control" id="priceto">
+				    <option>Price To</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="steering">Steering</label>
+			<select class="form-control" id="steering">
+				<option>Steering</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="engine">Engine</label>
+			<select class="form-control" id="engine">
+				<option>Engine</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="type">Type</label>
+			<select class="form-control" id="type">
+				<option>Type</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="bodytype">Body Type</label>
+			<select class="form-control" id="bodytype">
+				<option>Body Type</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="fuel">Fuel</label>
+			<select class="form-control" id="fuel">
+				<option>Fuel</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="transmission">Transmission</label>
+			<select class="form-control" id="transmission">
+				<option>Transmission</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="row">
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="mileagefrom">Mileage From</label>
+				<select class="form-control" id="mileagefrom">
+					<option>Mileage From</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-6 col-xs-6">
+			  <div class="form-group">
+			    <label class="sr-only" for="mileageto">Mileage To</label>
+				<select class="form-control" id="mileageto">
+				    <option>Mileage To</option>
+				    <option>All</option>
+				    <option>Toyota</option>
+				    <option>Honda</option>
+				    <option>Nissan</option>
+				</select>
+			  </div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="2wd4wd">2WD/4WD</label>
+			<select class="form-control" id="2wd4wd">
+				<option>2WD/4WD</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-6">
+		  <div class="form-group">
+		    <label class="sr-only" for="country">Country</label>
+			<select class="form-control" id="country">
+				<option>Country</option>
+			    <option>All</option>
+			    <option>Toyota</option>
+			    <option>Honda</option>
+			    <option>Nissan</option>
+			</select>
+		  </div>
+		</div>
+		<div class="col-md-9 col-sm-8 col-xs-6">
+		  <div class="form-group">
+		    <input class="form-control" type="text" name="search" placeholder=" Search for Make, Model, Chassis, Stock Number etc.">
+		  </div>
+		</div>
+		<div class="col-md-12 col-xs-12">
+			<label class="checkbox-inline"><input type="checkbox" value="">Used</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Brand New</label>
+		</div>
+		<div class="col-md-12 col-xs-12 text-center">
+			<button type="submit" class="btn btn-default mcustom">Search</button>
+			<button type="button" class="btn btn-default mcustom">Reset</button>
+		</div>
+
+		</div>		  
+		</form>
+	</div>
+	</div>
+
+	<div id="stockMain" class="container-fluid spacer">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 hidden-sm hidden-xs">
+				
+				<div class="stockFilter sDiv">
+				<form>
+				<div class="topbar"></div>
+				<h3 class="text-center">Filter By</h3>
+					<div class="stockFilterSec">
+						<label for="priceslider"><h4>Price ( USD )</h4></label>
+						<br>
+         				<input class="sliderInput" type="text" id="priceslider">
+         				<div id="slider-1"></div>
+					</div>
+					<div class="stockFilterSec">
+						<label for="yearslider"><h4>Year</h4></label>
+						<br>
+         				<input class="sliderInput" type="text" id="yearslider">
+         				<div id="slider-2"></div>
+					</div>
+					<div class="stockFilterSec">
+						<label for="engineslider"><h4>Engine ( cc )</h4></label>
+						<br>
+         				<input class="sliderInput" type="text" id="engineslider">
+         				<div id="slider-3"></div>
+					</div>
+					<div class="stockFilterSec">
+						<h4>Body Type</h4>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Car</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">SUV</label></li>
+						</ul>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Van</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Bike</label></li>
+						</ul>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Bus</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Truck</label></li>
+						</ul>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Pickup</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Machinery</label></li>
+						</ul>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Boat</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Other</label></li>
+						</ul>
+					</div>
+					<div class="stockFilterSec">
+						<h4>Steering</h4>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Left Hand</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Right Hand</label></li>
+						</ul>
+					</div>
+					<div class="stockFilterSec">
+						<h4>Transmission</h4>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Automatic</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Manual</label></li>
+						</ul>
+					</div>
+					<div class="stockFilterSec">
+						<h4>Fuel</h4>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Diesel</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Diesel/Hybrid</label></li>
+						</ul>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">CNG</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Electric</label></li>
+						</ul>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Gasoline</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Gasoline/LPG</label></li>
+						</ul>
+						<ul>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">LPG</label></li>
+						  <li><label class="checkbox-inline"><input type="checkbox" value="">Hybrid</label></li>
+						</ul>
+					</div>
+				</form>
+				</div>			
+			</div>
+			<div class="col-lg-9 col-md-8 col-xs-12">
+
+				<div class="stockItem container-fluid sBox2">
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="stockItem container-fluid sBox2">
+
+					<div class="row spacer2">
+						<div class="col-md-4 col-sm-5 col-xs-12 stockItemImg">
+							<a href=""><img class="img-thumbnail" src="img/vehicle.jpg" alt=""></a>
+						</div>
+						<div class="col-md-8 col-sm-7 col-xs-12 stockItemInfo">
+							<div class="row">
+							<div class="stockItemInfoH">
+								<a href=""><h3>Vehicle Name</h3></a>
+								<h4>Now On Sale</h4>
+							</div>
+								<div class="col-lg-8 col-xs-12">
+									<ul>
+										<li>Stock No. #14222</li>
+										<li data-toggle="tooltip" title="Engine">2,500 CC</li>
+										<li data-toggle="tooltip" title="Fuel">Hybrid</li>
+										<li data-toggle="tooltip" title="Transmission">Automatic</li>
+										<li data-toggle="tooltip" title="Drive">Right Hand</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-xs-12 stockItemInfoP">
+									<h4 >FOB Price</h4><h3>25,809 USD</h3>
+									<button type="button" class="btn btn-default mcustom">VIEW DETAILS</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>	
+
+	<div class="topbar"></div>
+    <div id="contact" class="container-fluid spacer">
+    <h2 class="text-center ">Contact Us</h2>
+		<div class="row contact">
+			  <div class="col-sm-6 ">			    
+			    <p>[recipient]<br>[street address]<br>[postal code + city/town/locality]<br>[country name]<br></p>
+			    <p>Tel : +xx-xx-xxx-xxxx<br>Fax : xx-xx-xxx-xxxx<br>Email : sales@xxxxxx.com<br> Web : www.cxxx.com<br>
+				Sales Hotline : xx-xx-xxxx-xxxx</p>
+				<div class="socialmedia">
+					<p><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> </p>
+				</div>    
+			  </div>
+			  
+				<div class="col-sm-6 contactform center">
+					<div class="row ">           
+					        <input class="form-control" type="text" placeholder="Name" >
+					        <input class="form-control" type="text" placeholder="Company">
+					        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+					        <button class="btn btn-default" style="float:right;">Send</button>
+					</div>
+				</div>			  
+		  </div>
+	</div>
+
+	<div class="footer container-fluid text-center spacer">		
+		<p>Copyright @ 2016 HyperX. All rights reserved.</p>
+	</div>
+
+	<a href="#home" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<script src="assests/customScroll.js"></script>
+
+</body>
+
+</html>
